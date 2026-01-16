@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | 2ndstreet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-page {
+            padding-top: calc(var(--spacing-xl) + 2rem);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .product-gallery {
+            background: #f9f9f9;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: var(--spacing-md) 0;
+        }
+
+        .product-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .description {
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .selectors {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .size-selector {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .size-selector label {
+            border: 1px solid var(--accent);
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .size-selector input {
+            display: none;
+        }
+
+        .size-selector input:checked+label {
+            background: var(--primary);
+            color: var(--secondary);
+            border-color: var(--primary);
+        }
+
+        .qty-selector {
+            margin-top: 2rem;
+        }
+
+        .qty-selector select {
+            padding: 0.5rem;
+            width: 80px;
+        }
+
+        .btn-add-to-cart {
+            width: 100%;
+            margin-top: 2rem;
+            padding: 1.2rem;
+        }
+
+        @media (max-width: 992px) {
+            .product-page {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html">2ndstreet</a></div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="collection.html">Collections</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#">Bag (0)</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="product-page">
+            <div class="product-gallery fade-in">
+                <img id="main-product-image" src="" alt="Product">
+            </div>
+
+            <div class="product-info fade-in">
+                <h1 id="product-name">Loading...</h1>
+                <div class="price" id="product-price">...</div>
+
+                <p class="description" id="product-description">
+                    Loading description...
+                </p>
+
+                <div class="selectors">
+                    <p style="text-transform: uppercase; font-weight: 600; font-size: 0.8rem;">Select Size</p>
+                    <div class="size-selector">
+                        <input type="radio" name="size" id="s" value="S">
+                        <label for="s">S</label>
+                        <input type="radio" name="size" id="m" value="M" checked>
+                        <label for="m">M</label>
+                        <input type="radio" name="size" id="l" value="L">
+                        <label for="l">L</label>
+                        <input type="radio" name="size" id="xl" value="XL">
+                        <label for="xl">XL</label>
+                    </div>
+
+                    <div class="qty-selector">
+                        <p
+                            style="text-transform: uppercase; font-weight: 600; font-size: 0.8rem; margin-bottom: 0.5rem;">
+                            Quantity</p>
+                        <select id="qty">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="btn btn-add-to-cart">Add to Bag</button>
+
+                <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">Free shipping on orders over $200. Returns
+                    within 30 days.</p>
+            </div>
+        </div>
+
+        <section class="related-products">
+            <h2 style="margin-bottom: var(--spacing-lg);">Related Products</h2>
+            <div class="product-grid related-grid">
+                <!-- Related products rendered by product.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 2ndstreet.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/product.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All | 2ndstreet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .shop-header {
+            padding-top: calc(var(--spacing-xl) + 2rem);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .search-container input {
+            padding: 0.8rem;
+            border: 1px solid var(--accent);
+            width: 300px;
+            font-family: var(--font-body);
+            outline: none;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.8rem;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            border-bottom-color: var(--primary);
+            font-weight: 600;
+        }
+
+        select {
+            padding: 0.8rem;
+            border: 1px solid var(--accent);
+            font-family: var(--font-body);
+            background: white;
+            outline: none;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .product-card {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .product-image {
+            background: #F9F9F9;
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .search-container input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html">2ndstreet</a></div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="shop.html" class="active" style="font-weight: 600;">Shop</a></li>
+                    <li><a href="collection.html">Collections</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="#">Bag (0)</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="shop-header">
+            <h1 class="heading">Shop All</h1>
+        </div>
+
+        <div class="controls">
+            <div class="search-container">
+                <input type="text" id="search" placeholder="SEARCH PRODUCTS...">
+            </div>
+
+            <div class="filter-group">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="Shirt">Shirt</button>
+                <button class="filter-btn" data-category="T-shirt">T-shirt</button>
+                <button class="filter-btn" data-category="Bottoms">Bottoms</button>
+            </div>
+
+            <div class="sort-container">
+                <select id="sort">
+                    <option value="newest">Newest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <!-- Products will be rendered by shop.js -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="margin-bottom: var(--spacing-md);">2ndstreet</div>
+                    <p style="opacity: 0.6; font-size: 0.9rem;">Modern luxury streetwear.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md);">Site</h4>
+                    <ul style="opacity: 0.8; font-size: 0.9rem;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 2ndstreet.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+
+</html>

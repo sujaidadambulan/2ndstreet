@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | 2ndstreet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-page {
+            padding-top: calc(var(--spacing-xl) + 4rem);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--spacing-xl);
+            align-items: start;
+        }
+
+        .contact-info-section h1 {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1;
+        }
+
+        .contact-details {
+            margin-top: var(--spacing-lg);
+        }
+
+        .detail-item {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .detail-item h4 {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            opacity: 0.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        .contact-form-section {
+            background: #FBFBFB;
+            padding: var(--spacing-lg);
+            border: 1px solid var(--accent);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: none;
+            border-bottom: 1px solid var(--accent);
+            font-family: var(--font-body);
+            outline: none;
+            background: transparent;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-bottom-color: var(--primary);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .contact-info-section h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html">2ndstreet</a></div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="collection.html">Collections</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active" style="font-weight: 600;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container contact-page">
+        <div class="contact-grid">
+            <div class="contact-info-section fade-in">
+                <h1 class="heading">GET IN<br>TOUCH</h1>
+                <p style="opacity: 0.6; max-width: 400px; margin-bottom: var(--spacing-lg);">Whether you have a question
+                    about our collections, or just want to say hello, we'd love to hear from you.</p>
+
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <h4>EMAIL</h4>
+                        <p>concierge@2ndstreet.com</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>OFFICE</h4>
+                        <p>15-1 Shibuya, Tokyo<br>Japan 150-0002</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>SOCIAL</h4>
+                        <p>@2ndstreet_official</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-section fade-in">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully.');">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Inquiry about SS26">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 2ndstreet.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

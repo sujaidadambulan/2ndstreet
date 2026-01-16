@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | 2ndstreet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-page {
+            padding-top: calc(var(--spacing-xl) + 2rem);
+        }
+
+        .editorial-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .editorial-text {
+            padding: var(--spacing-lg);
+        }
+
+        .editorial-text h2 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .editorial-image {
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .editorial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mission-statement {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xl);
+            padding: var(--spacing-xl) 0;
+            border-top: 1px solid var(--accent);
+            border-bottom: 1px solid var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .editorial-section {
+                grid-template-columns: 1fr;
+            }
+
+            .editorial-image {
+                height: 400px;
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html">2ndstreet</a></div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="collection.html">Collections</a></li>
+                    <li><a href="about.html" class="active" style="font-weight: 600;">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container about-page">
+        <section class="editorial-section">
+            <div class="editorial-text fade-in">
+                <h2>BORN IN THE STREETS.</h2>
+                <p>2ndstreet was founded on the principle of elevated minimalism. We believe that luxury is not about
+                    excess, but about the perfection of the essential.</p>
+                <p style="margin-top: 1rem;">Every piece we create is a response to the urban environment—functional,
+                    durable, and uncompromising in style.</p>
+            </div>
+            <div class="editorial-image fade-in">
+                <img src="assets/images/hero.png" alt="Brand Vision">
+            </div>
+        </section>
+
+        <section class="mission-statement fade-in">
+            <h3 class="heading" style="margin-bottom: var(--spacing-md);">Our Philosophy</h3>
+            <p style="font-size: 1.5rem; font-style: italic; opacity: 0.8;">"Simplicity is the ultimate sophistication.
+                We design for those who let their presence speak louder than their clothes."</p>
+        </section>
+
+        <section class="editorial-section" style="direction: rtl;">
+            <div class="editorial-text fade-in" style="direction: ltr;">
+                <h2>CRAFTED QUALITY.</h2>
+                <p>We source only the finest materials from across the globe. From high-density Japanese cotton to
+                    premium Italian leather, our commitment to quality is absolute.</p>
+                <p style="margin-top: 1rem;">Our production process is slow, deliberate, and focused on longevity. We
+                    don't follow seasons; we define eras.</p>
+            </div>
+            <div class="editorial-image fade-in">
+                <img src="assets/images/collection_winter.png" alt="Craftsmanship">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 2ndstreet.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

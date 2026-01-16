@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2ndstreet | Premium Luxury Streetwear</title>
+    <meta name="description"
+        content="Shop the latest in premium luxury streetwear at 2ndstreet. Minimalist design, high-end quality.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Home Specific Styles */
+        .hero {
+            height: 100vh;
+            background: url('https://i.pinimg.com/1200x/86/b1/51/86b15140b95badb0bbc1047b75bfea69.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 0.9;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .collection-card {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: var(--spacing-lg);
+            left: var(--spacing-lg);
+            color: var(--secondary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .product-card {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .product-image {
+            background: #f9f9f9;
+            margin-bottom: var(--spacing-sm);
+            aspect-ratio: 4/5;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        .newsletter {
+            background: var(--primary);
+            color: var(--secondary);
+            text-align: center;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .newsletter input {
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--secondary);
+            color: var(--secondary);
+            padding: 1rem;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        /* Responsiveness Fixes */
+        .desktop-only {
+            display: flex;
+        }
+
+        .curated-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .curated-header h2 {
+            font-size: 2.5rem;
+        }
+
+        .curated-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .curated-large {
+            grid-column: span 7;
+        }
+
+        .curated-side {
+            grid-column: span 5;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .curated-header h2 {
+                font-size: 2rem;
+            }
+
+            .curated-large {
+                grid-column: span 12;
+            }
+
+            .curated-side {
+                grid-column: span 12;
+                flex-direction: row;
+            }
+
+            .curated-side>.product-card {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none;
+            }
+
+            .curated-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                margin-bottom: var(--spacing-md);
+            }
+
+            .curated-side {
+                flex-direction: column;
+            }
+
+            .featured-products {
+                padding-top: var(--spacing-lg);
+            }
+
+            .product-meta {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-card {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="index.html">2ndstreet</a></div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="collection.html">Collections</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-icons desktop-only">
+                    <a href="#">Search</a>
+                    <a href="#">Bag (0)</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content fade-in">
+                <h1>NEW ERA<br>MINIMALISM</h1>
+                <p style="margin-bottom: 2rem; letter-spacing: 0.2em;">SS26 COLLECTION IS HERE</p>
+                <a href="shop.html" class="btn btn-outline" style="color: white; border-color: white;">Shop Now</a>
+            </div>
+        </section>
+
+        <section class="collections">
+            <div class="container">
+                <div class="collection-grid">
+                    <div class="collection-card fade-in">
+                        <img src="assets/images/collection_winter.png" alt="Winter Drop">
+                        <div class="collection-overlay">
+                            <h2>WINTER DROP</h2>
+                            <a href="collection.html" style="border-bottom: 1px solid white;">View Collection</a>
+                        </div>
+                    </div>
+                    <div class="collection-card fade-in">
+                        <img src="assets/images/hero.png" alt="Essentials">
+                        <div class="collection-overlay">
+                            <h2>ESSENTIALS</h2>
+                            <a href="collection.html" style="border-bottom: 1px solid white;">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="container">
+                <div class="curated-header">
+                    <h2 class="heading">Curated<br>Essentials</h2>
+                    <a href="shop.html"
+                        style="font-size: 0.8rem; letter-spacing: 0.2em; border-bottom: 1px solid var(--primary); padding-bottom: 5px;">VIEW
+                        ALL</a>
+                </div>
+
+                <div class="curated-grid">
+                    <!-- Featured Product (Large) -->
+                    <div class="product-card curated-large fade-in">
+                        <a href="product.html?id=3">
+                            <div class="product-image" style="aspect-ratio: 16/9; background: #F5F5F5;">
+                                <img src="assets/images/hero_luxury.png" alt="Wide-Leg Wool Trousers"
+                                    style="object-fit: cover;">
+                            </div>
+                            <div class="product-meta">
+                                <div>
+                                    <h3 style="font-size: 1.2rem; margin-bottom: 0.2rem;">Wide-Leg Wool Trousers</h3>
+                                    <p
+                                        style="opacity: 0.5; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;">
+                                        Bottoms</p>
+                                </div>
+                                <p style="font-weight: 600;">$320.00</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Side Products -->
+                    <div class="curated-side">
+                        <!-- Product 2 -->
+                        <div class="product-card fade-in">
+                            <a href="product.html?id=1">
+                                <div class="product-image" style="aspect-ratio: 4/5; background: #F5F5F5;">
+                                    <img src="assets/images/shirt_01.png" alt="Linen Relaxed Shirt">
+                                </div>
+                                <div class="product-meta" style="margin-top: 1rem;">
+                                    <h3 style="font-size: 1rem;">Linen Relaxed Shirt</h3>
+                                    <p>$180.00</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Product 3 -->
+                        <div class="product-card fade-in">
+                            <a href="product.html?id=2">
+                                <div class="product-image" style="aspect-ratio: 4/5; background: #F5F5F5;">
+                                    <img src="assets/images/shirt_01.png" alt="Heavyweight Boxy Tee">
+                                </div>
+                                <div class="product-meta" style="margin-top: 1rem;">
+                                    <h3 style="font-size: 1rem;">Heavyweight Boxy Tee</h3>
+                                    <p>$85.00</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter fade-in">
+            <div class="container">
+                <h2 style="margin-bottom: var(--spacing-md);">Join the Street</h2>
+                <p style="margin-bottom: var(--spacing-lg); opacity: 0.8;">Get early access to drops and exclusive
+                    offers.</p>
+                <form onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="YOUR EMAIL ADDRESS" required>
+                    <br>
+                    <button type="submit" class="btn btn-outline"
+                        style="color: white; border-color: white;">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="logo" style="margin-bottom: var(--spacing-md);">2ndstreet</div>
+                    <p style="opacity: 0.6; font-size: 0.9rem;">Modern luxury streetwear for the next generation.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md);">Navigation</h4>
+                    <ul style="opacity: 0.8; font-size: 0.9rem;">
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="collection.html">Collections</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md);">Legal</h4>
+                    <ul style="opacity: 0.8; font-size: 0.9rem;">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: var(--spacing-md);">Social</h4>
+                    <ul style="opacity: 0.8; font-size: 0.9rem;">
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter/X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 2ndstreet. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
